@@ -7,7 +7,7 @@ public class AddressBook {
         person.addContact();
         }
         }
-class contactDetails {
+  class contactDetails {
     private String firstName;
     private String lastName;
     private String address;
@@ -82,6 +82,7 @@ class contactDetails {
         return " FirstName :" + firstName + " LastName :" + lastName + " Address  : " + address  +" city : " + city + " State : "
                 + state + " Zip :" + zip + '\'' + " PhoneNumber : " + phoneNumber + " Email : " + email;
     }
+
 }
 
 class newAddressBook {
