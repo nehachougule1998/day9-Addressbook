@@ -1,29 +1,20 @@
 package com.bridgelabz;
+import java.util.Scanner;
 public class AddressBook {
 	public static void main(String[] args) {
 		System.out.println("welcome to address book program");
-		contactDetails newContact = new contactDetails();  //create object 
-
-        newContact.setFirstName("Neha \n");
-        newContact.setLastName("chougule \n");
-        newContact.setAddressCity("near jain mandir,burli dist-sangli \n");
-        newContact.setState("Maharashtra \n");
-        newContact.setZip(416308);
-        newContact.setPhoneNumber("9657475623 \n");
-        newContact.setEmail("nehachougule830@gmail.com \n");
-        System.out.println("The Contact is : \n" + newContact);
-
-    }
-
-}
-
-class contactDetails {
+		newAddressBook person = new newAddressBook();
+        person.addContact();
+        }
+        }
+  class contactDetails {
     private String firstName;
     private String lastName;
-    private String addressCity;
+    private String address;
+    private String city;
     private String state;
     private int zip;
-    private String phoneNumber;
+    private int phoneNumber;
     private String email;
 
     public String getFirstName() {
@@ -42,14 +33,19 @@ class contactDetails {
         this.lastName = lastName;
     }
 
-    public String getAddressCity() {
-        return addressCity;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddressCity(String addressCity) {
-        this.addressCity = addressCity;
+    public void setAddress(String address) {
+        this.address = address;
     }
-
+    public String getcity() {
+        return city;
+    }
+    public void setcity(String city) {
+        this.city = city;
+    }    
     public String getState() {
         return state;
     }
@@ -66,11 +62,11 @@ class contactDetails {
         this.zip = zip;
     }
 
-    public String getPhoneNumber() {
+    public int getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
+    public void setPhoneNumber(int phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -83,13 +79,49 @@ class contactDetails {
     }
 
     public String toString() {
-        return " FirstName :" + firstName + " LastName :" + lastName + " Address City : " + addressCity + " State : "
+        return " FirstName :" + firstName + " LastName :" + lastName + " Address  : " + address  +" city : " + city + " State : "
                 + state + " Zip :" + zip + '\'' + " PhoneNumber : " + phoneNumber + " Email : " + email;
+    }
+
+}
+
+class newAddressBook {
+
+    Scanner sc = new Scanner(System.in);
+	 
+
+    public void addContact() {
+        contactDetails person = new contactDetails();    
+        System.out.println("Enter First Name: ");
+        String firstName = sc.nextLine();
+        System.out.println("Enter last Name: ");
+        String lastName = sc.nextLine();
+        System.out.println("Enter your address: ");
+        String address = sc.nextLine();
+        System.out.println("Enter your city: ");
+        String city = sc.nextLine();
+        System.out.println("Enter your state: ");
+        String state = sc.nextLine();
+        System.out.println("Enter zip code : ");
+        int zip = sc.nextInt();
+        System.out.println("Enter phone number: ");
+        int phoneNumber = sc.nextInt();
+        System.out.println("Enter your EMail ID: ");
+        String email = sc.next();
+        person.setFirstName(firstName);
+        person.setLastName(lastName);
+        person.setAddress(address);
+        person.setcity(city);
+        person.setState(state);
+        person.setZip(zip);
+        person.setPhoneNumber(phoneNumber);
+        person.setEmail(email);
+        System.out.println("The Contact Details of " + firstName + "\n" + person);
     }
 }
 
-    
+   
 
 
 
-	
+
