@@ -1,14 +1,12 @@
 package com.bridgelabz;
-
 public class AddressBook {
-
 	public static void main(String[] args) {
 		System.out.println("welcome to address book program");
 		contactDetails newContact = new contactDetails();  //create object 
 
         newContact.setFirstName("Neha \n");
         newContact.setLastName("chougule \n");
-        newContact.setAddressCity("burli \n");
+        newContact.setAddressCity("near jain mandir,burli dist-sangli \n");
         newContact.setState("Maharashtra \n");
         newContact.setZip(416308);
         newContact.setPhoneNumber("9657475623 \n");
@@ -87,9 +85,11 @@ class contactDetails {
     public String toString() {
         return " FirstName :" + firstName + " LastName :" + lastName + " Address City : " + addressCity + " State : "
                 + state + " Zip :" + zip + '\'' + " PhoneNumber : " + phoneNumber + " Email : " + email;
-
     }
-
 }
+
+    
+
+
 
 	
