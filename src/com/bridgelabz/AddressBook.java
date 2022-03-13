@@ -4,9 +4,25 @@ import java.util.Scanner;
 public class AddressBook {
 	public static void main(String[] args) {
 		System.out.println("welcome to address book program");
-		newAddressBook person = new newAddressBook();
-        person.addContact();
-        person.editContact();
+		Scanner sc = new Scanner(System.in);
+		newAddressBook book = new newAddressBook();
+        book.addContact();
+        System.out.println(book.person);
+        System.out.println("Enter the choice \n 1. Edit \n 2. Delete");
+        int option = sc.nextInt();
+  switch (option) {
+            case 1:
+                book.editContact();
+                System.out.println("You have Entered following data");
+                System.out.println(book.person);
+                System.out.println("Thank you for Using the Address book");
+                break;
+
+            case 2:
+                book.deleteContact();
+                System.out.println("Address Book details :" + book.person);
+                break;
+        }
         }
         }
         
@@ -136,5 +152,12 @@ class newAddressBook {
 			System.out.println("The Entered First Name Is Not Match");
 		editContact();
 	}
+	  public void deleteContact() {
+	        System.out.println("Enter firstName of the person");
+	        String editName = sc.nextLine();
+	        if (editName.equals(person.getFirstName())) {
+	            System.out.println("Deleted " + person.getFirstName() + " details");
+	            person = null;
 }
-
+}
+}
