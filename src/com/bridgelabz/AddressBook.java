@@ -1,7 +1,7 @@
 package com.bridgelabz;
 public class AddressBook extends Contact {
     String address, city, state;
-    int zip;
+    int zip; 
     long phoneNo;
 
     public void setAddress(String address) {
@@ -26,7 +26,7 @@ public class AddressBook extends Contact {
 
     public String getState() {
         return state;
-    } 
+    }
 
     public void setPhoneNo(long phoneNo) {
         this.phoneNo = phoneNo;
