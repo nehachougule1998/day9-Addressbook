@@ -1,16 +1,15 @@
 package com.bridgelabz;
-import java.util.Scanner;
+import java.util.Scannner;
 
 public class AddressBookSystem {
     public static void main(String[] args) {
-        System.out.println("Welcome In Address Book System Program On Master Branch");
+        System.out.println("Welcome In Address Book System Program ");
         String firstName, lastName, address, city, state, email;
         int zip;
         long phoneNo;
         char option;
 
-        ArrayList<AddressBook> contactArr = new ArrayList<AddressBook>();
-
+        OperateContact operate = new OperateContact();
         Scanner sc= new Scanner(System.in);
         do{
 
@@ -47,26 +46,26 @@ public class AddressBookSystem {
             zip = sc.nextInt();
             contact.setZip(zip);
 
-            contactArr.add(contact);
+            operate.storeContact(firstName, contact);
+
             System.out.print("\nDo you want to add one more contact? press Y / N : ");
             option = sc.next().charAt(0);
             sc.nextLine();
-        }
-            while(option == 'Y');
-            OperateContact operate = new OperateContact();
-            System.out.print("\nDo you want to edit? press Y / N : ");
-            char editOption = sc.next().charAt(0);
-        if(editOption == 'Y'){
-            operate.editContact(contactArr);
-        }
-        operate.showContact(contactArr);
+        }while(option == 'Y');
 
-        System.out.print("\n\nDo you want to delete? press Y / N : ");
+        System.out.print("\nDo you want to edit? press Y / N : ");
+        char editOption = sc.next().charAt(0);
+        if(editOption == 'Y'){
+            operate.editContact();
+        }
+        operate.showContact();
+
+        System.out.print("\nDo you want to delete? press Y / N : ");
         char deleteOption = sc.next().charAt(0);
         if(deleteOption == 'Y'){
-            contactArr = operate.deleteContact(contactArr);
+            operate.deleteContact();
         }
-        operate.showContact(contactArr);
+        operate.showContact();
 
         sc.close();
     }
