@@ -2,7 +2,6 @@ package com.bridgelabz;
 
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class OperateContact {
     public void editContact(ArrayList<AddressBook> contactArr) {
